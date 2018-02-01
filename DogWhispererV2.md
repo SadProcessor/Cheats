@@ -2,11 +2,11 @@
 
 Collection of **BloodHound Cypher Query Examples**
 
-* [Raw](#i--raw)
-* [Built-In](#ii--built-in)
-* [Custom](#iii--custom)
-* [DB Manipulation](#iv--db-manipulation)
-* [REST API](#v--rest-api) _(PowerShell)_
+* [I- Raw](#i--raw)
+* [II- Built-In](#ii--built-in)
+* [III- Custom](#iii--custom)
+* [IV- DB Manipulation](#iv--db-manipulation)
+* [V- REST API](#v--rest-api) _(PowerShell)_
 
 _see also [Neo4j Syntax Reference](http://neo4j.com/docs/cypher-refcard/current/) for more Cypher madness_
 
