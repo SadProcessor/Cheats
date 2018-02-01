@@ -337,7 +337,7 @@ WHERE n.name ENDS WITH '@EXTERNAL.LOCAL'
 WITH n 
 MATCH 
 (n)-[r:MemberOf*1..]->(m:Group) 
-WHERE NOT m.name ENDS WITH '@EXTERNAL.LOCAL
+WHERE NOT m.name ENDS WITH '@EXTERNAL.LOCAL'
 RETURN n,r,m
 ```
 
