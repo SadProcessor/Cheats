@@ -153,7 +153,7 @@ List of **available Edges** types (ACL since 1.3)
 | Domain | `:TrustedBy` | Domain |
 |  User/Group | `:ForceChangePassword` \* | User |
 |  User/Group | `:AddMembers` \* | Group |
-|  User/Group | `:GenericAll` \* | User/Group |
+|  User/Group | `:GenericAll` \* | User/Computer/Group |
 |  User/Group | `:GenericWrite` \* | User/Computer/Group |
 |  User/Group | `:WriteOwner` \* | User/Computer/Group|
 |  User/Group | `:WriteDACL` \* | User/Computer/Group |
