@@ -435,7 +435,7 @@ MATCH (n:User {name: 'bob'}) DETACH DELETE n
 <br><br/>
 ### Create Node & Properties 
 
- **/!\ DANGER ZONE /!\**
+ **/!\ DANGER ZONE /!\\**
 
 ```
 MERGE (n:User {name: 'alice', age:23, hair:'black'}) RETURN n
