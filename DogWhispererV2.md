@@ -10,8 +10,6 @@ Collection of **BloodHound Cypher Query Examples**
 
 _see also [Neo4j Syntax Reference](http://neo4j.com/docs/cypher-refcard/current/) for more Cypher madness_
 
-
-<br><br/>
 This is a **quick guide** and is not ment to be exhaustive or anything. Just a collection of bits and pieces I found here and there. Enough to start **scratching the surface** by looking at some **examples**, but surely not enough to master the full power of **BloodHound Cypher Queries**.
 
 For advance BloodHound Cypher, [check the pros...](#moaaar-stuff)
