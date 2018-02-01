@@ -218,13 +218,13 @@ In this Example a **Path from A to B via C**
 MATCH 
 (A:User {name: 'ACHAVARIN@EXTERNAL.LOCAL'}), 
 (C:User {name: 'CBARCLAY@INTERNAL.LOCAL'}), 
-x=shortestPath((A)-[*1..]->(B)) 
+x=shortestPath((A)-[*1..]->(C)) 
 RETURN x 
 UNION ALL 
 MATCH 
 (C:User {name: 'CBARCLAY@INTERNAL.LOCAL'}),
 (B:Group {name: 'DOMAIN USERS@INTERNAL.LOCAL'}),
-x=shortestPath((A)-[*0..]->(B))
+x=shortestPath((C)-[*0..]->(B))
 RETURN x
 ```
 
