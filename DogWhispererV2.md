@@ -1,4 +1,4 @@
-# DogWhispererV2 - BloodHound Cypher Cheat Sheet
+# DogWhisperer - BloodHound Cypher Cheat Sheet (v2)
 
 Collection of **BloodHound Cypher Query Examples**
 
