@@ -207,7 +207,7 @@ The `allShortestPaths()` function works the same way as `shortestPath()` but ret
 /!\ Restrict _Edge type_ / _max hops_ for heavy queries
 
 <br><br/>
-### D- Union
+#### Union
 Multiple returned results can be combined into a single output/graph using `UNION` or `UNION ALL`
 
 In this Example a **Path from A to B via C**
