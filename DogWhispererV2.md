@@ -32,13 +32,11 @@ Can be entered in the **Raw Query** input box at the bottom of the BloodHound UI
 ```
 MATCH (n) RETURN n
 ```
-
 <br><br/>
 #### All User Nodes (Computer/Group/Domain)
 ```
 MATCH (n:User) RETURN n
 ```
-
 <br><br/>
 #### Node by Name
 ```
@@ -55,21 +53,18 @@ Same as above, different syntax
 MATCH (x) WHERE x.name='APOLLO.EXTERNAL.LOCAL' RETURN x
 ```
 Same without specifying node type (probably less eco-friendly)
-
 <br><br/>
 #### Node by Property - Property Exists
 ```
 MATCH (n:User) WHERE exists(n.test) RETURN n
 ```
 Return all nodes that have a property 'test' (value or not)
-
 <br><br/>
 #### Node by Property - Does Not Exists
 ```
 MATCH (n:User) WHERE NOT exists(n.test) RETURN n
 ```
 Return all user that dont have a property called 'test'
-
 <br><br/>
 #### Node by Property - Property Value
 ```
@@ -87,7 +82,9 @@ MATCH (X:Group) WHERE X.name =~ '(?i).*aDMiN.*' RETURN X
 ```
 Same as above, using (case insensitive) regex
 
+<br><br/>
 #### Comparaison Operators
+
 List of operators that can be used with the `WHERE` clause
 
 | OPERATOR | SYNTAX |
@@ -382,7 +379,6 @@ Add/Delete Nodes/Properties/Edges to/from DB. (The world is yours...)
 MERGE (n:User {name: 'bob'})
 ```
 Creates Node if doesn't already exist
-
 <br><br/>
 ### Add/Update Node property
 ```
@@ -393,7 +389,6 @@ MATCH (n) WHERE n.name='bob' SET n.age=23
 MATCH (n) WHERE n.name='bob' SET n.age=27, n.hair='black', n.sport='Chess-Boxing'
 ```
 Both Create missing properties, overwrites existing property values
-
 <br><br/>
 ### Remove Node property
 ```
@@ -408,7 +403,6 @@ MATCH (U:User) WHERE EXISTS(U.age) REMOVE U.age
 MATCH (U:User) WHERE EXISTS(U.hair) REMOVE U.age, U.hair RETURN U
 ```
 Removes property from node (Single Node / multiple Nodes / multiple props) 
-
 <br><br/>
 ### Create Edge between Nodes (/!\ direction)
 
@@ -423,7 +417,6 @@ MATCH (A:User {name: 'alice'})
 MATCH (B:User {name: 'bob'}) 
 CREATE (A)<-[r:IsBrother]-(B)
 ```
-
 <br><br/>
 ### Delete Edge
 ```
@@ -431,13 +424,11 @@ MATCH (n:User {name: 'alice'})-[r:IsSister]->(m:User {name: 'bob'})
 DELETE r
 ```
 /!\ not specifying any Edge type will remove all Edges between specified Nodes
-
 <br><br/>
 ### Delete Node (and all connected edges)
 ```
 MATCH (n:User {name: 'bob'}) DETACH DELETE n
 ```
-
 <br><br/>
 ### Create Node & Properties 
 
