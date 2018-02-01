@@ -623,6 +623,7 @@ DogPost $Body
 ```
 
 > _Works exact same way with a `curl` on linux_
+
 <br><br/>
 **Attackers Think in Graph... Automations Don't.**
 
