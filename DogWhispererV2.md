@@ -140,7 +140,7 @@ RETURN p
 MATCH 
 (A:User), 
 (B:Group {name: 'CONTRACTINGH@INTERNAL.LOCAL'}), 
-p=(A)-[r:MemberOf*1..4]->(B) 
+p=(A)-[r:MemberOf*1..]->(B) 
 RETURN p
 ```
 
