@@ -378,6 +378,7 @@ Add/Delete Nodes/Properties/Edges to/from DB. (The world is yours...)
 MERGE (n:User {name: 'bob'})
 ```
 > Creates Node if doesn't already exist
+
 <br><br/>
 ### Add/Update Node property
 ```
@@ -388,6 +389,7 @@ MATCH (n) WHERE n.name='bob' SET n.age=23
 MATCH (n) WHERE n.name='bob' SET n.age=27, n.hair='black', n.sport='Chess-Boxing'
 ```
 > Both Create missing properties, overwrites existing property values
+
 <br><br/>
 ### Remove Node property
 ```
