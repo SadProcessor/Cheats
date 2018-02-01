@@ -590,6 +590,8 @@ $Body = '{
 #### Putting it all together...
 Post to server. Get reply. Parse data. Automate other stuff with that data... Fantastic!
 
+![GreatestDogInTheWorld](https://github.com/SadProcessor/Cheats/blob/master/MostImportantDog.png)
+
 A basic **PowerShell** function to call the API could look like this...
 
 ```Powershell
@@ -620,9 +622,6 @@ $Body='
 DogPost $Body
 
 ```
-
-
-![GreatestDogInTheWorld](https://github.com/SadProcessor/Cheats/blob/master/MostImportantDog.png)
 
 _Works exact same way with a `curl` on linux_
 
