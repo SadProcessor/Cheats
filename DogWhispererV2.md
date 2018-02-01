@@ -42,45 +42,45 @@ MATCH (n:User) RETURN n
 ```
 MATCH (x:Computer {name: 'APOLLO.EXTERNAL.LOCAL'}) RETURN x
 ```
-Return Computer node name 'APOLLO.EXTERNAL.LOCAL'
+> Return Computer node name 'APOLLO.EXTERNAL.LOCAL'
 
 ```
 MATCH (x:Computer) WHERE x.name='APOLLO.EXTERNAL.LOCAL' RETURN x
 ```
-Same as above, different syntax
+> Same as above, different syntax
 
 ```
 MATCH (x) WHERE x.name='APOLLO.EXTERNAL.LOCAL' RETURN x
 ```
-Same without specifying node type (probably less eco-friendly)
+> Same without specifying node type (probably less eco-friendly)
 <br><br/>
 #### Node by Property - Property Exists
 ```
 MATCH (n:User) WHERE exists(n.test) RETURN n
 ```
-Return all nodes that have a property 'test' (value or not)
+> Return all nodes that have a property 'test' (value or not)
 <br><br/>
 #### Node by Property - Does Not Exists
 ```
 MATCH (n:User) WHERE NOT exists(n.test) RETURN n
 ```
-Return all user that dont have a property called 'test'
+> Return all user that dont have a property called 'test'
 <br><br/>
 #### Node by Property - Property Value
 ```
 MATCH (n:User) WHERE n.test='helloWorld' RETURN n
 ```
-Return all user that have a property 'test' with value 'helloworld'
+> Return all user that have a property 'test' with value 'helloworld'
 
 ```
 MATCH (X:Group) WHERE X.name CONTAINS 'ADMIN' RETURN X
 ```
-Return All Groups with 'ADMIN' in name (case sensitive)
+> Return All Groups with 'ADMIN' in name (case sensitive)
 
 ```
 MATCH (X:Group) WHERE X.name =~ '(?i).*aDMiN.*' RETURN X
 ```
-Same as above, using (case insensitive) regex
+> Same as above, using (case insensitive) regex
 
 <br><br/>
 #### Comparaison Operators
@@ -187,7 +187,7 @@ MATCH
 p=(A)-[r:MemberOf|:AdminTo*1..3]->(B)
 RETURN p
 ```
-All admin user max 3 hops away by group membership from specified target computer
+> All admin user max 3 hops away by group membership from specified target computer
 
 #### All Sortest Paths
 ```
@@ -232,7 +232,7 @@ Commonly used queries. Found under the Query Tab.
 
 Avoids having to come up with syntax every time.
 
-A lot of cool example moves in there.
+A lot of cool example in there.
 
 _source code can be found [here](https://github.com/BloodHoundAD/BloodHound/blob/master/src/components/SearchContainer/Tabs/PrebuiltQueries.json)_
 
@@ -345,9 +345,9 @@ MATCH (n:Domain) MATCH p=(n)-[r]-() RETURN p
 
 ## III- Custom
 
-Add homemade queries to the interface (= ease of use).
+Add **homemade** queries to the interface (= ease of use).
 
-Looks & feels exactly like built-in queries once added.
+**Looks & feels exactly like built-in queries** once added.
 
 To add custom queries, click on the pen icon all the way at the bottom of the query tab.
 
@@ -377,7 +377,7 @@ Add/Delete Nodes/Properties/Edges to/from DB. (The world is yours...)
 ```
 MERGE (n:User {name: 'bob'})
 ```
-Creates Node if doesn't already exist
+> Creates Node if doesn't already exist
 <br><br/>
 ### Add/Update Node property
 ```
@@ -387,7 +387,7 @@ MATCH (n) WHERE n.name='bob' SET n.age=23
 ```
 MATCH (n) WHERE n.name='bob' SET n.age=27, n.hair='black', n.sport='Chess-Boxing'
 ```
-Both Create missing properties, overwrites existing property values
+> Both Create missing properties, overwrites existing property values
 <br><br/>
 ### Remove Node property
 ```
@@ -401,7 +401,7 @@ MATCH (U:User) WHERE EXISTS(U.age) REMOVE U.age
 ```
 MATCH (U:User) WHERE EXISTS(U.hair) REMOVE U.age, U.hair RETURN U
 ```
-Removes property from node (Single Node / multiple Nodes / multiple props) 
+> Removes property from node (Single Node / multiple Nodes / multiple props) 
 <br><br/>
 ### Create Edge between Nodes (/!\ direction)
 
@@ -422,7 +422,7 @@ CREATE (A)<-[r:IsBrother]-(B)
 MATCH (n:User {name: 'alice'})-[r:IsSister]->(m:User {name: 'bob'}) 
 DELETE r
 ```
-/!\ not specifying any Edge type will remove all Edges between specified Nodes
+> /!\ not specifying any Edge type will remove all Edges between specified Nodes
 <br><br/>
 ### Delete Node (and all connected edges)
 ```
@@ -431,12 +431,12 @@ MATCH (n:User {name: 'bob'}) DETACH DELETE n
 <br><br/>
 ### Create Node & Properties 
 
- /!\ DANGER ZONE /!\
+ **/!\ DANGER ZONE /!\**
 
 ```
 MERGE (n:User {name: 'alice', age:23, hair:'black'}) RETURN n
 ```
-/!\ Use only if Node name doesn't already exist. Prefer safer MERGE/SET command
+> /!\ Use only if Node name doesn't already exist. Prefer safer MERGE/SET command
 
 ### Create nodes & Properties & Edges 
 ```
@@ -446,7 +446,7 @@ MERGE (A:User {name:bob})-[r:IsBrother]->(B:User {name:'Paul'})
 ```
 MERGE (A:User {name:'Jack', age:14, hair:'black'})-[r:IsBrother]->(B:User {name:'Jimmy'})
 ```
-/!\ Use only if Nodes don't already exist. otherwise MERGE or MERGE/SET each block sperately
+> /!\ Use only if Nodes don't already exist. otherwise MERGE or MERGE/SET each block sperately
 
 **Recommended syntax**:
 ```
@@ -465,7 +465,7 @@ MERGE (X)-[r:IsBrother]->(Y)
 ```
 MATCH (x) DETACH DELETE x
 ```
-/!\ Simple and efficient. Try at your own (data) expense
+> /!\ Simple and efficient. Try at your own (data) expense
 
 <br><br/>
 
@@ -497,7 +497,7 @@ $NodeData = $Reply.data.data
 
 ```
 
-Only need to add `$Body` to build query. The rest stays the same. See examples below...
+> Only need to add `$Body` to build query. The rest stays the same. See examples below...
 
 ### A- Node
 
@@ -613,10 +613,8 @@ DogPost $Body
 
 ```
 
-_Works exact same way with a `curl` on linux_
-
+> _Works exact same way with a `curl` on linux_
 <br><br/>
-
 **Attackers Think in Graph... Automations Don't.**
 
 Returning Graphs is not suited for all command line tools (ba dum tsss!), but computers love data...
