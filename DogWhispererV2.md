@@ -2,11 +2,11 @@
 
 Collection of **BloodHound Cypher Query Examples**
 
-* [Raw](#raw)
-* [Built-In](#builtin)
-* [Custom](#custom)
-* [DB Manipulation](#db-manipulation)
-* [REST API](#rest-api) _(PowerShell)_
+* [Raw](#I.-raw)
+* [Built-In](#II.-builtin)
+* [Custom](#III.-custom)
+* [DB Manipulation](#IV.-db-manipulation)
+* [REST API](#V.-rest-api) _(PowerShell)_
 
 _see also [Neo4j Syntax Reference](http://neo4j.com/docs/cypher-refcard/current/) for more Cypher madness_
 
@@ -16,15 +16,15 @@ This is a **quick guide** and is not ment to be exhaustive or anything. Just a c
 
 For advance BloodHound Cypher, [check the pros...](#moaaar-stuff)
 
-(+picture1)
-
 _Note: All examples in this guide can be run against the [Bloodhound sample database](#sample-db) for testing_
+
+(insert picture1)
 
 <br><br/>
 
 ***
 
-## Raw
+## I. Raw
 
 Can be entered in the **Raw Query** input box at the bottom of the BloodHound UI
 
@@ -35,13 +35,13 @@ Can be entered in the **Raw Query** input box at the bottom of the BloodHound UI
 MATCH (n) RETURN n
 ```
 
-
-
+<br><br/>
 #### All User Nodes (Computer/Group/Domain)
 ```
 MATCH (n:user) RETURN n
 ```
 
+<br><br/>
 #### Node by Name
 ```
 MATCH (x:Computer {name: 'APOLLO.EXTERNAL.LOCAL'}) RETURN x
@@ -58,18 +58,21 @@ MATCH (x) WHERE x.name='APOLLO.EXTERNAL.LOCAL' RETURN x
 ```
 Same without specifying node type (probably less eco-friendly)
 
+<br><br/>
 #### Node by Property - Property Exists
 ```
 MATCH (n:User) WHERE exists(n.test) RETURN n
 ```
 Return all nodes that have a property 'test' (value or not)
 
+<br><br/>
 #### Node by Property - Does Not Exists
 ```
 MATCH (n:User) WHERE NOT exists(n.test) RETURN n
 ```
 Return all user that dont have a property called 'test'
 
+<br><br/>
 #### Node by Property - Property Value
 ```
 MATCH (n:User) WHERE n.test='helloWorld' RETURN n
@@ -86,6 +89,7 @@ MATCH (X:Group) WHERE X.name =~ '(?i).*aDMiN.*' RETURN X
 ```
 Same as above, using (case insensitive) regex
 
+<br><br/>
 #### Comparaison Operators
 List of operators that can be used with the `WHERE` clause
 
@@ -106,6 +110,7 @@ List of operators that can be used with the `WHERE` clause
 
 (\*) String specific
 
+<br><br/>
 ### Edges
 
 > TIP: It's possible to **paste multi-lines** in the query box
@@ -140,6 +145,7 @@ p=(A)-[r:MemberOf*1..4]->(B)
 RETURN p
 ```
 
+<br><br/>
 List of **available Edges** types (ACL since 1.3)
 
 | Source Node Type | Edge Type | Target Node Type |
@@ -159,9 +165,10 @@ List of **available Edges** types (ACL since 1.3)
 
 (\*) More info on [ACLs](https://wald0.com/?p=112)
 
+<br><br/>
 ### Paths
 
-#### Path from A to B - any Edge type
+#### Shortest Path from A to B - any Edge type
 ```
 MATCH
 (A:User {name: 'ACHAVARIN@EXTERNAL.LOCAL'}),
@@ -170,7 +177,7 @@ x=shortestPath((A)-[*1..]->(B))
 RETURN x
 ```
 
-#### Path from A to B - specific Edge types
+#### Shortest Path from A to B - specific Edge types
 ```
 MATCH
 (A:User {name: 'ACHAVARIN@EXTERNAL.LOCAL'}),
@@ -203,6 +210,7 @@ The `allShortestPaths()` function works the same way as `shortestPath()` but ret
 
 /!\ Restrict _Edge type_ / _max hops_ for heavy queries
 
+<br><br/>
 ### Union
 Multiple returned results can be combined into a single output/graph using `UNION` or `UNION ALL`
 
@@ -225,7 +233,7 @@ RETURN x
 
 ***
 
-## BuiltIn
+## II. Built In
 
 Commonly used queries. Found under the Query Tab. 
 
@@ -339,8 +347,10 @@ RETURN n,r,m
 MATCH (n:Domain) MATCH p=(n)-[r]-() RETURN p
 ```
 
+<br><br/>
 ***
-## Custom
+
+## III. Custom
 
 Add homemade queries to the interface (= ease of use).
 
@@ -358,15 +368,15 @@ Click on refresh icon next to pen.
 
 Voila.
 
-Check [Built-In](#Built-In) query source code for syntax examples
+_Check [Built-In](#II.-Built-In) query source code for syntax examples_
 
-Check @cptjesus [intro to Cypher](https://blog.cptjesus.com/posts/introtocypher) for more info
+_Check @cptjesus [intro to Cypher](https://blog.cptjesus.com/posts/introtocypher) for more info_
 
 <br><br/>
 
 ***
 
-## DB Manipulation
+## IV. DB Manipulation
 
 Add/Delete Nodes/Properties/Edges to/from DB. (The world is yours...)
 
@@ -376,6 +386,7 @@ MERGE (n:User {name: 'bob'})
 ```
 Creates Node if doesn't already exist
 
+<br><br/>
 ### Add/Update Node property
 ```
 MATCH (n) WHERE n.name='bob' SET n.age=23
@@ -386,6 +397,7 @@ MATCH (n) WHERE n.name='bob' SET n.age=27, n.hair='black', n.sport='Chess-Boxing
 ```
 Both Create missing properties, overwrites existing property values
 
+<br><br/>
 ### Remove Node property
 ```
 MATCH (n) WHERE n.name='Bob' REMOVE n.sport
@@ -400,6 +412,7 @@ MATCH (U:User) WHERE EXISTS(U.hair) REMOVE U.age, U.hair RETURN U
 ```
 Removes property from node (Single Node / multiple Nodes / multiple props) 
 
+<br><br/>
 ### Create Edge between Nodes (/!\ direction)
 
 ```
@@ -414,6 +427,7 @@ MATCH (B:User {name: 'bob'})
 CREATE (A)<-[r:IsBrother]-(B)
 ```
 
+<br><br/>
 ### Delete Edge
 ```
 MATCH (n:User {name: 'alice'})-[r:IsSister]->(m:User {name: 'bob'}) 
@@ -421,11 +435,13 @@ DELETE r
 ```
 /!\ not specifying any Edge type will remove all Edges between specified Nodes
 
+<br><br/>
 ### Delete Node (and all connected edges)
 ```
 MATCH (n:User {name: 'bob'}) DETACH DELETE n
 ```
 
+<br><br/>
 ### Create Node & Properties 
 
  /!\ DANGER ZONE /!\
@@ -468,7 +484,7 @@ MATCH (x) DETACH DELETE x
 
 ***
 
-## REST API
+## V. REST API
 
 Access/Manipulate **BloodHound data via REST API**. 
 
@@ -476,7 +492,8 @@ Example here is with PowerShell, but you can apply same method with language of 
 
 Note: To Access Bloodhound (on localhost) via API, uncomment `#dbms.security.auth_enabled=false` in neo4j config file
 
-### API Call Basic
+<br><br/>
+### API Call - Basic
 
 ```PowerShell
 # Prep Vars 
@@ -496,6 +513,7 @@ $NodeData = $Reply.data.data
 
 Only need to add `$Body` to build query. The rest stays the same. See examples below...
 
+<br><br/>
 ### Node
 
 #### Node View
@@ -543,6 +561,7 @@ $Body = '{
 }'
 ```
 
+<br><br/>
 ### Edge
 
 #### Edge View
@@ -562,9 +581,10 @@ $Body = '{
 }'
 ```
 
+<br><br/>
 ### Path
 
-#### Path
+#### Shortest Path 
 
 ```Powershell
 $Body = '{
@@ -573,7 +593,8 @@ $Body = '{
 }'
 ```
 
-#### All together...
+<br><br/>
+#### Putting it all together...
 Post to server. Get reply. Parse data. Automate other stuff with that data... Fantastic!
 
 A basic **PowerShell** function to call the API could look like this...
@@ -681,13 +702,13 @@ Links to more info on/around the topic
 
 - [Six degrees of Domain Admin](https://youtu.be/lxd2rerVsLo) by @_wald0 & Co - BSides LV 2016
 
-- [Here Be Dragons...](https://youtu.be/z8thoG7gPd0) by @_wald0 & Co
+- [Here Be Dragons...](https://youtu.be/z8thoG7gPd0) by @_wald0 & Co - DerbyCon 2017 
 
 - [GoFetch](https://youtu.be/lbJPCnjQxCU) by @TaltheMaor @TalBerySec - BlackHat 2017
 
 - [Extending Bloodhound for RedTeamers](https://youtu.be/Pn7GWRXfgeI) by @Porterhau5 - WWHF 2017
 
-- **Requiem for an Admin** by @SadProcessor - [BSides Amsterdam](https://youtu.be/uMg18TvLAcE?list=PLdhDuST3OlrNRull1hITtWVYzIQPfWjXD) & [PSConf Asia](https://vimeo.com/244165407) (Shameless Plug)
+- [Requiem for an Admin](https://youtu.be/uMg18TvLAcE?list=PLdhDuST3OlrNRull1hITtWVYzIQPfWjXD) (Shameless Plug)
 
 #### **Noe4j**
 
