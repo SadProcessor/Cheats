@@ -492,7 +492,6 @@ Example here is with PowerShell, but you can apply same method with language of 
 
 Note: To Access Bloodhound (on localhost) via API, uncomment `#dbms.security.auth_enabled=false` in neo4j config file
 
-<br><br/>
 ### API Call - Basic
 
 ```PowerShell
@@ -513,7 +512,6 @@ $NodeData = $Reply.data.data
 
 Only need to add `$Body` to build query. The rest stays the same. See examples below...
 
-<br><br/>
 ### Node
 
 #### Node View
