@@ -53,18 +53,21 @@ MATCH (x:Computer) WHERE x.name='APOLLO.EXTERNAL.LOCAL' RETURN x
 MATCH (x) WHERE x.name='APOLLO.EXTERNAL.LOCAL' RETURN x
 ```
 > Same without specifying node type (probably less eco-friendly)
+
 <br><br/>
 #### Node by Property - Property Exists
 ```
 MATCH (n:User) WHERE exists(n.test) RETURN n
 ```
 > Return all nodes that have a property 'test' (value or not)
+
 <br><br/>
 #### Node by Property - Does Not Exists
 ```
 MATCH (n:User) WHERE NOT exists(n.test) RETURN n
 ```
 > Return all user that dont have a property called 'test'
+
 <br><br/>
 #### Node by Property - Property Value
 ```
