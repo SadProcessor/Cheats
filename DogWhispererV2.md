@@ -367,7 +367,7 @@ Click on refresh icon next to pen.
 
 Voila.
 
-_Check [Built-In](#II--Built-In) query source code for syntax examples_
+_Check [Built-In](#ii--built-in) query source code for syntax examples_
 
 _Check @cptjesus [intro to Cypher](https://blog.cptjesus.com/posts/introtocypher) for more info_
 
