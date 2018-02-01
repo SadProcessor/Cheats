@@ -28,7 +28,7 @@ _Note: All examples in this guide can be run against the [Bloodhound sample data
 
 Can be entered in the **Raw Query** input box at the bottom of the BloodHound UI
 
-### Nodes
+### A- Nodes
 
 #### All Nodes
 ```
@@ -110,7 +110,7 @@ List of operators that can be used with the `WHERE` clause
 (\*) String specific
 
 <br><br/>
-### Edges
+### B- Edges
 
 > TIP: It's possible to **paste multi-lines** in the query box
 
@@ -165,7 +165,7 @@ List of **available Edges** types (ACL since 1.3)
 (\*) More info on [ACLs](https://wald0.com/?p=112)
 
 <br><br/>
-### Paths
+### C- Paths
 
 #### Shortest Path from A to B - any Edge type
 ```
@@ -210,7 +210,7 @@ The `allShortestPaths()` function works the same way as `shortestPath()` but ret
 /!\ Restrict _Edge type_ / _max hops_ for heavy queries
 
 <br><br/>
-### Union
+### D- Union
 Multiple returned results can be combined into a single output/graph using `UNION` or `UNION ALL`
 
 In this Example a **Path from A to B via C**
@@ -511,7 +511,7 @@ $NodeData = $Reply.data.data
 
 Only need to add `$Body` to build query. The rest stays the same. See examples below...
 
-### Node
+### A- Node
 
 #### Node View
 
@@ -558,7 +558,7 @@ $Body = '{
 }'
 ```
 
-### Edge
+### B- Edge
 
 #### Edge View
 
@@ -577,7 +577,7 @@ $Body = '{
 }'
 ```
 
-### Path
+### C- Path
 
 #### Shortest Path 
 
@@ -622,6 +622,8 @@ $Body='
 DogPost $Body
 
 ```
+
+(picture2)
 
 Works exact same way with a `curl` on linux
 
