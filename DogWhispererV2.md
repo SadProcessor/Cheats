@@ -624,11 +624,11 @@ DogPost $Body
 
 ![GreatestDogInTheWorld](https://github.com/SadProcessor/Cheats/blob/master/MostImportantDog.png)
 
-Works exact same way with a `curl` on linux
+_Works exact same way with a `curl` on linux_
 
+<br><br/>
 
-
-> Attackers Think in Graph... Automations Don't.
+**Attackers Think in Graph... Automations Don't.**
 
 Returning Graphs is not suited for all command line tools (ba dum tsss!), but computers love data...
 
