@@ -703,7 +703,7 @@ Links to more info on/around the topic
 
 - [Extending Bloodhound for RedTeamers](https://youtu.be/Pn7GWRXfgeI) by @Porterhau5 - WWHF 2017
 
-- [Requiem for an Admin](https://youtu.be/uMg18TvLAcE?list=PLdhDuST3OlrNRull1hITtWVYzIQPfWjXD) BSides Amsterdam (Shameless Plug)
+- [Requiem for an Admin](https://youtu.be/uMg18TvLAcE?list=PLdhDuST3OlrNRull1hITtWVYzIQPfWjXD) by @SadProcessor - BSides Amsterdam (Shameless Plug)
 
 #### **Noe4j**
 
