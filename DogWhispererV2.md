@@ -3,10 +3,10 @@
 Collection of **BloodHound Cypher Query Examples**
 
 * [Raw](#i--raw)
-* [Built-In](#ii.-built-in)
-* [Custom](#iii.-custom)
-* [DB Manipulation](#iv.-db-manipulation)
-* [REST API](#v.-rest-api) _(PowerShell)_
+* [Built-In](#ii--built-in)
+* [Custom](#iii--custom)
+* [DB Manipulation](#iv--db-manipulation)
+* [REST API](#v--rest-api) _(PowerShell)_
 
 _see also [Neo4j Syntax Reference](http://neo4j.com/docs/cypher-refcard/current/) for more Cypher madness_
 
@@ -89,7 +89,6 @@ MATCH (X:Group) WHERE X.name =~ '(?i).*aDMiN.*' RETURN X
 ```
 Same as above, using (case insensitive) regex
 
-<br><br/>
 #### Comparaison Operators
 List of operators that can be used with the `WHERE` clause
 
@@ -233,7 +232,7 @@ RETURN x
 
 ***
 
-## II. Built In
+## II- Built-In
 
 Commonly used queries. Found under the Query Tab. 
 
@@ -350,7 +349,7 @@ MATCH (n:Domain) MATCH p=(n)-[r]-() RETURN p
 <br><br/>
 ***
 
-## III. Custom
+## III- Custom
 
 Add homemade queries to the interface (= ease of use).
 
@@ -358,17 +357,17 @@ Looks & feels exactly like built-in queries once added.
 
 To add custom queries, click on the pen icon all the way at the bottom of the query tab.
 
-Open in Notepad. 
+Open in Notepad. Paste Query.
+
+/!\ Don't forget to save changes.
 
 Will be saved to `C:\Users\<username>\AppData\Roaming\bloodhound\customqueries`. 
-
-/!\ Don't forget to save changes. 
 
 Click on refresh icon next to pen. 
 
 Voila.
 
-_Check [Built-In](#II.-Built-In) query source code for syntax examples_
+_Check [Built-In](#II--Built-In) query source code for syntax examples_
 
 _Check @cptjesus [intro to Cypher](https://blog.cptjesus.com/posts/introtocypher) for more info_
 
@@ -376,7 +375,7 @@ _Check @cptjesus [intro to Cypher](https://blog.cptjesus.com/posts/introtocypher
 
 ***
 
-## IV. DB Manipulation
+## IV- DB Manipulation
 
 Add/Delete Nodes/Properties/Edges to/from DB. (The world is yours...)
 
@@ -484,7 +483,7 @@ MATCH (x) DETACH DELETE x
 
 ***
 
-## V. REST API
+## V- REST API
 
 Access/Manipulate **BloodHound data via REST API**. 
 
@@ -559,7 +558,6 @@ $Body = '{
 }'
 ```
 
-<br><br/>
 ### Edge
 
 #### Edge View
@@ -579,7 +577,6 @@ $Body = '{
 }'
 ```
 
-<br><br/>
 ### Path
 
 #### Shortest Path 
@@ -706,7 +703,7 @@ Links to more info on/around the topic
 
 - [Extending Bloodhound for RedTeamers](https://youtu.be/Pn7GWRXfgeI) by @Porterhau5 - WWHF 2017
 
-- [Requiem for an Admin](https://youtu.be/uMg18TvLAcE?list=PLdhDuST3OlrNRull1hITtWVYzIQPfWjXD) (Shameless Plug)
+- [Requiem for an Admin](https://youtu.be/uMg18TvLAcE?list=PLdhDuST3OlrNRull1hITtWVYzIQPfWjXD) BSides Amsterdam (Shameless Plug)
 
 #### **Noe4j**
 
@@ -728,7 +725,8 @@ Links to more info on/around the topic
 
 <br><br/>
 
----
+<br><br/>
+***
 
 ### Sample DB
 
@@ -773,6 +771,7 @@ Can use `CTRL`+`Z` and `CTRL`+`Y` in **Query Box** as kind of history function
 
 _Note: Debuging queries is easier via neo4j browser (http://localhost:7474/Browser)_
 
+<br><br/>
 
 ---
 
