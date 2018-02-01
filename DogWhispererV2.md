@@ -38,7 +38,7 @@ MATCH (n) RETURN n
 <br><br/>
 #### All User Nodes (Computer/Group/Domain)
 ```
-MATCH (n:user) RETURN n
+MATCH (n:User) RETURN n
 ```
 
 <br><br/>
