@@ -2,7 +2,7 @@
 
 Collection of **BloodHound Cypher Query Examples**
 
-* [Raw](#i.-raw)
+* [Raw](#i--raw)
 * [Built-In](#ii.-built-in)
 * [Custom](#iii.-custom)
 * [DB Manipulation](#iv.-db-manipulation)
@@ -24,7 +24,7 @@ _Note: All examples in this guide can be run against the [Bloodhound sample data
 
 ***
 
-## I. Raw
+## I- Raw
 
 Can be entered in the **Raw Query** input box at the bottom of the BloodHound UI
 
