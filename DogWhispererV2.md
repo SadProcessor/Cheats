@@ -402,6 +402,7 @@ MATCH (U:User) WHERE EXISTS(U.age) REMOVE U.age
 MATCH (U:User) WHERE EXISTS(U.hair) REMOVE U.age, U.hair RETURN U
 ```
 > Removes property from node (Single Node / multiple Nodes / multiple props) 
+
 <br><br/>
 ### Create Edge between Nodes (/!\ direction)
 
@@ -422,12 +423,15 @@ CREATE (A)<-[r:IsBrother]-(B)
 MATCH (n:User {name: 'alice'})-[r:IsSister]->(m:User {name: 'bob'}) 
 DELETE r
 ```
+
 > /!\ not specifying any Edge type will remove all Edges between specified Nodes
+
 <br><br/>
 ### Delete Node (and all connected edges)
 ```
 MATCH (n:User {name: 'bob'}) DETACH DELETE n
 ```
+
 <br><br/>
 ### Create Node & Properties 
 
