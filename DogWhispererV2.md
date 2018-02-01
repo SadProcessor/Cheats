@@ -97,12 +97,12 @@ List of operators that can be used with the `WHERE` clause
 | Is Greater or Equal | `>=` |
 | Is Null | `IS NULL` |
 | Us Not Null |`IS NOT NULL`|
-| Prefix Search (\*) | `STARTS WITH`|
-| Suffix Search (\*) | `ENDS WITH`|
-| Inclusion Search (\*) | `CONTAINS`|
-| Regex (\*) | `=~` |
+| Prefix Search \* | `STARTS WITH`|
+| Suffix Search \* | `ENDS WITH`|
+| Inclusion Search \* | `CONTAINS`|
+| Regex \* | `=~` |
 
-(\*) String specific
+\* String specific
 
 <br><br/>
 ### B- Edges
@@ -148,16 +148,15 @@ List of **available Edges** types (ACL since 1.3)
 | User/Group | `:AdminTo` | Computer |
 | Computer | `:HasSession` | User |
 | Domain | `:TrustedBy` | Domain |
-| - | - | - | <----------------------------------------> /!\ WiP
-|  User/Group | `:forceChangePassword` (\*) | User |
-|  User/Group | `:AddMembers` (\*) | Group |
-|  User/Group | `:GenericAll` (\*) | User/Group |
-|  User/Group | `:GenericWrite` (\*) | User/Computer/Group |
-|  User/Group | `:WriteOwner` (\*) | User/Computer/Group|
-|  User/Group | `:WriteDACL` (\*) | User/Computer/Group |
-|  User/Group | `:AllExtendedRights` (\*) | User/Computer/Group |
+|  User/Group | `:ForceChangePassword` \* | User |
+|  User/Group | `:AddMembers` \* | Group |
+|  User/Group | `:GenericAll` \* | User/Group |
+|  User/Group | `:GenericWrite` \* | User/Computer/Group |
+|  User/Group | `:WriteOwner` \* | User/Computer/Group|
+|  User/Group | `:WriteDACL` \* | User/Computer/Group |
+|  User/Group | `:AllExtendedRights` \* | User/Computer/Group |
 
-(\*) More info on [ACLs](https://wald0.com/?p=112)
+\* More info on [ACLs](https://wald0.com/?p=112)
 
 <br><br/>
 ### C- Paths
