@@ -16,7 +16,7 @@ For advance BloodHound Cypher, [check the pros...](#moaaar-stuff)
 
 _Note: All examples in this guide can be run against the [Bloodhound sample database](#sample-db) for testing_
 
-(insert picture1)
+![HostBusters](https://github.com/SadProcessor/Cheats/blob/master/HostBustersWallpaper.jpg)
 
 <br><br/>
 
