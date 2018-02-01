@@ -20,10 +20,9 @@ For advance BloodHound Cypher, [check the pros...](#moaaar-stuff)
 
 _Note: All examples in this guide can be run against the [Bloodhound sample database](#sample-db) for testing_
 
-***
-
 <br><br/>
 
+***
 
 ## Raw
 
@@ -35,6 +34,8 @@ Can be entered in the **Raw Query** input box at the bottom of the BloodHound UI
 ```
 MATCH (n) RETURN n
 ```
+
+
 
 #### All User Nodes (Computer/Group/Domain)
 ```
