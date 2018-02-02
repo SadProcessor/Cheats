@@ -2,6 +2,8 @@
  
 A one page Wiki for all your Empire RTFM needs...
 
+![Will, I am your Father...](https://github.com/SadProcessor/Cheats/blob/master/ShellFather.jpg)
+
 ## Index
  
 - [powershell](#powershell)
