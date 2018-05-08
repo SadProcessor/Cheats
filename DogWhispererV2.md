@@ -102,8 +102,7 @@ List of operators that can be used with the `WHERE` clause
 | Us Not Null |`IS NOT NULL`|
 | Prefix Search \* | `STARTS WITH`|
 | Suffix Search \* | `ENDS WITH`|
-| Inclusion Search \* | `CONTAINS`|
-| Regex \* | `=~` |
+| Inclusion Search \* | `CONTAINS`|| Regex \* | `=~` |
 
 \* String specific
 
@@ -132,7 +131,7 @@ p=(A)-[r:MemberOf*1..4]->(B)
 RETURN p
 ```
 
-#### Group Mambership -Any degree
+#### Group Membership - Any degree
 
 ```
 MATCH 
