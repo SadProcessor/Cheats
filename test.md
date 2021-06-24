@@ -4,8 +4,10 @@
 
 /
 
-/
-
+```PowerShell
+#Code Block
+Get-Date
+```
 /
 
 /
